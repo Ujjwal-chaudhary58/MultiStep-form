@@ -1,0 +1,172 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: #f4f6fa;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  overflow: hidden;
+  width: 900px;
+}
+
+.sidebar {
+  background: linear-gradient(to bottom, #ff6a7f, #ffc371);
+  padding: 30px 20px;
+  width: 250px;
+  color: #fff;
+}
+
+.step {
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  opacity: 0.5;
+}
+
+.step.active {
+  opacity: 1;
+  font-weight: bold;
+}
+
+.step span {
+  display: inline-block;
+  background: #fff;
+  color: #ff6a7f;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 30px;
+  font-weight: bold;
+}
+
+.form-section {
+  padding: 40px;
+  flex: 1;
+  display: none;
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.4s ease;
+  height: auto;
+}
+
+.form-section.active {
+  display: block;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.form-section h2 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.form-section p {
+  margin-bottom: 30px;
+  color: #555;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+label {
+  font-size: 14px;
+  color: #333;
+}
+
+input {
+  width: 100%;
+  padding: 10px 12px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+}
+
+button {
+  margin-top: 20px;
+  padding: 12px 18px;
+  background: #022c43;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #011d2c;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+#summary {
+  background: #f7f7f7;
+  padding: 15px;
+  border-radius: 8px;
+  color: #222;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    width: 95%;
+  }
+
+  .sidebar {
+    flex-direction: row;
+    width: 100%;
+    overflow-x: auto;
+    padding: 10px 15px;
+    justify-content: space-between;
+  }
+
+  .step {
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+    margin-bottom: 0;
+  }
+
+  .step span {
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 12px;
+  }
+
+  .form-section {
+    padding: 20px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+
